@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:food2/view/on_boarding/startup_view.dart';
+import 'package:food2/view/login/Welcome_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+
       builder: EasyLoading.init(),
       theme: ThemeData(fontFamily: ""),
-      home: const StartupView(),
+      home: const WelcomeView(),
     );
   }
 }

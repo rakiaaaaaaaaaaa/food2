@@ -12,15 +12,11 @@ class _StartupViewState extends State<StartupView> {
   @override
   void initState() {
     super.initState();
-    goWelcomePage();
+    _goToWelcomePage();
   }
 
-  void goWelcomePage() async {
+  void _goToWelcomePage() async {
     await Future.delayed(const Duration(seconds: 3));
-    welcomePage();
-  }
-
-  void welcomePage() {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => const WelcomeView()),
@@ -32,15 +28,10 @@ class _StartupViewState extends State<StartupView> {
     var media = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: const Color(0xFF1E3C1B), // Match welcome background
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Image.asset(
-            "assets/img/splash_bg.png",
-            width: media.width,
-            height: media.height,
-            fit: BoxFit.cover,
-          ),
           Image.asset(
             "assets/img/app_logo.png",
             width: media.width * 0.55,
